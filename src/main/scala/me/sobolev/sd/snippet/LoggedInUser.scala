@@ -5,8 +5,12 @@ import util.Helpers._
 import common._;
 import net.liftweb.http.SessionVar
 
-class LoggedInUser {
-  object currentUser extends SessionVar[String]("Unknown");
-  
-  def render = "* *" #> currentUser.get
+class LoggedInUser {  
+  def render = "* *" #> (CurrentUser.set_? match {
+    case true => <span>Welcome, {CurrentUser.get}</span>;
+    case false => <span data-lift="lift:embed?what=/templates/loginFormSnippet"/>
+  })
 }
+
+object CurrentUser extends SessionVar[String]("Unknown");
+  
