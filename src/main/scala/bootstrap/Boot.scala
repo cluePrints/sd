@@ -10,15 +10,14 @@ import net.liftweb.sitemap.{Menu, SiteMap}
 class Boot {
   def boot {
     // where to search snippet
-    LiftRules.addToPackages("me.sobolev")
-
+    LiftRules.addToPackages("me.sobolev.sd")
+      
     // Build SiteMap
     def sitemap(): SiteMap = SiteMap(
       Menu.i("Home") / "index"
     )
 
     // Use HTML5 for rendering
-    LiftRules.htmlProperties.default.set((r: Req) =>
-      new Html5Properties(r.userAgent))
+    LiftRules.htmlProperties.default.set((r: Req) => new Html5Properties(r.userAgent))
   }
 }
