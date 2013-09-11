@@ -7,7 +7,7 @@ import net.liftweb.http.SessionVar
 
 class LoggedInUser {  
   def render = "* *" #> (CurrentUser.set_? match {
-    case true => <span>Welcome, {CurrentUser.get}</span>;
+    case true => <span>{CurrentUser.get}</span>;
     case false => <span data-lift="lift:embed?what=/templates/loginFormSnippet"/>
   })
 }
