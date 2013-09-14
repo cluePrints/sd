@@ -19,6 +19,6 @@ class LogIn {
     }
     
     "name=name" #> SHtml.onSubmit(name = _) &
-    "type=submit" #> SHtml.onSubmitUnit(process);
+    "type=button" #> SHtml.onSubmitUnit(process);
   }
 }
