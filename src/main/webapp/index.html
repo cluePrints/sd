@@ -6,11 +6,13 @@
 </head>
 <body class="lift:content_id=main">
 	<div id="main" data-lift="lift:surround?with=default;at=content">
-		<h2>Welcome, <span data-lift="LoggedInUser">user</span></h2>
+		<h2>
+			Welcome, <span data-lift="LoggedInUser"></span>
+		</h2>
 		Sessions you may want to attend:
-		<ul id="eventsList" data-lift="Slots">			
+		<ul id="eventsList" data-lift="Slots">
 		</ul>
-		<span data-lift="lift:embed?what=/templates/addSlotSnippet"/> 
+		<span data-lift="lift:embed?what=/templates/addSlotSnippet" />
 	</div>
 </body>
 </html>
